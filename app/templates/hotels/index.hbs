@@ -1,0 +1,13 @@
+<div class="row">
+  {{#each model as |product| }}
+    <div class="col-md-4 portfolio-item">
+        <img class="img-responsive-hotel-list" src={{product.links.thumbnailImage.href}} alt="">
+      <h3>
+        {{#link-to 'hotels.detail' product.id product.rooms.firstObject.rates.firstObject.rateToken}}
+          {{product.name}}
+        {{/link-to}}
+      </h3>
+        <p class="product-description">{{product.description}}</p>
+    </div>
+  {{/each}}
+</div>
